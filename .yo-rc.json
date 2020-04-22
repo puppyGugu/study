@@ -1,0 +1,55 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.codezen.jhtest",
+      "nativeLanguage": "ko"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "jhtest",
+    "packageName": "org.codezen.jhtest",
+    "packageFolder": "org/codezen/jhtest",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mariadb",
+    "prodDatabaseType": "mariadb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWRlM2E2ZTFkMWEyYWI0Y2I0YzZhNGQ5NjgwNGJhYjRiZjE5MTUzMzRkMzRmMTFjZGQ2OGEyMDNiOWQ1OGIyZjQxMjdmMzRmNTRmY2RiMjBkNWI2YmNlOWMyNzE1YWE3MTFkNDIyMTJhNGNiZmQ0MWNhYzdiMWY0MTM1ODFjNzc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "flatly",
+    "clientThemeVariant": "light",
+    "creationTimestamp": 1587579085069,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-kutilang",
+        "version": "0.0.9"
+      },
+      {
+        "name": "generator-jhipster-social-login-api",
+        "version": "0.0.1"
+      },
+      {
+        "name": "generator-jhipster-blog",
+        "version": "0.0.2"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "ko",
+    "languages": ["ko", "en"],
+    "blueprints": []
+  }
+}

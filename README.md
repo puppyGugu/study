@@ -1,4 +1,3 @@
-# jhmabatis
 
 created by [JHipster](https://www.jhipster.tech/) generator  
 and modified to use [Mybatis](mybatis.org) not only [Spring Data JPA](https://spring.io/projects/spring-data-jpa).

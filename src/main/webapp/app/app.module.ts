@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { JhtestSharedModule } from 'app/shared/shared.module';
-import { JhtestCoreModule } from 'app/core/core.module';
-import { JhtestAppRoutingModule } from './app-routing.module';
-import { JhtestHomeModule } from './home/home.module';
-import { JhtestEntityModule } from './entities/entity.module';
+import { JhMybatisSharedModule } from 'app/shared/shared.module';
+import { JhMybatisCoreModule } from 'app/core/core.module';
+import { JhMybatisAppRoutingModule } from './app-routing.module';
+import { JhMybatisHomeModule } from './home/home.module';
+import { JhMybatisEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    JhtestSharedModule,
-    JhtestCoreModule,
-    JhtestHomeModule,
+    JhMybatisSharedModule,
+    JhMybatisCoreModule,
+    JhMybatisHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    JhtestEntityModule,
-    JhtestAppRoutingModule
+    JhMybatisEntityModule,
+    JhMybatisAppRoutingModule
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent]
 })
-export class JhtestAppModule {}
+export class JhMybatisAppModule {}

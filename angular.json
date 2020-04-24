@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jhtest": {
+    "jhmybatis": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
@@ -29,7 +29,7 @@
       "architect": {}
     }
   },
-  "defaultProject": "jhtest",
+  "defaultProject": "jhmybatis",
   "cli": {
     "packageManager": "npm"
   }

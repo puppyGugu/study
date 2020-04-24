@@ -12,12 +12,14 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
 
 logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    org.codezen.jhtest: DEBUG
+    org.codezen.jhmybatis: DEBUG
 
 spring:
   profiles:
@@ -37,9 +39,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mariadb://localhost:3306/jhtest?useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password:
+    url: jdbc:mariadb://localhost:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: jhtest
+    password: 12345678
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -57,8 +59,9 @@ spring:
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
   liquibase:
+    enabled: false
     # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev, faker
+    contexts: dev
   mail:
     host: localhost
     port: 25
@@ -121,3 +124,4 @@ jhipster:
 # ===================================================================
 
 # application:
+

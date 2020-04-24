@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { JhtestSharedModule } from 'app/shared/shared.module';
+import { JhMybatisSharedModule } from 'app/shared/shared.module';
 
 import { LogsComponent } from './logs.component';
 
 import { logsRoute } from './logs.route';
 
 @NgModule({
-  imports: [JhtestSharedModule, RouterModule.forChild([logsRoute])],
+  imports: [JhMybatisSharedModule, RouterModule.forChild([logsRoute])],
   declarations: [LogsComponent]
 })
 export class LogsModule {}

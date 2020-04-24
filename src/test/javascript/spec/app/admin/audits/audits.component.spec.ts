@@ -3,7 +3,7 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { advanceTo } from 'jest-date-mock';
 
-import { JhtestTestModule } from '../../../test.module';
+import { JhMybatisTestModule } from '../../../test.module';
 import { AuditsComponent } from 'app/admin/audits/audits.component';
 import { AuditsService } from 'app/admin/audits/audits.service';
 import { Audit } from 'app/admin/audits/audit.model';
@@ -39,7 +39,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [JhtestTestModule],
+        imports: [JhMybatisTestModule],
         declarations: [AuditsComponent],
         providers: [AuditsService]
       })

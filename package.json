@@ -1,7 +1,7 @@
 {
-  "name": "jhtest",
+  "name": "jhmybatis",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for jhtest",
+  "description": "Description for jhmybatis",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

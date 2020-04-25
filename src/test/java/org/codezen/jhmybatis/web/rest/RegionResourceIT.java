@@ -15,6 +15,8 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
+
+import java.util.HashMap;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -154,7 +156,8 @@ public class RegionResourceIT {
     @Transactional
     public void updateRegion() throws Exception {
         // Initialize the database
-        regionService.save(region);
+        HashMap<String, Object> map = new HashMap<>();
+        regionService.save(map);
 
         int databaseSizeBeforeUpdate = regionRepository.findAll().size();
 
@@ -199,7 +202,8 @@ public class RegionResourceIT {
     @Transactional
     public void deleteRegion() throws Exception {
         // Initialize the database
-        regionService.save(region);
+        HashMap<String, Object> map = new HashMap<>();
+        regionService.save(map);
 
         int databaseSizeBeforeDelete = regionRepository.findAll().size();
 

@@ -16,7 +16,7 @@ public interface RegionService {
      * @param region the entity to save.
      * @return the persisted entity.
      */
-    Region save(Region region);
+    void save(HashMap<String, Object> map);
 
     /**
      * Get all the regions.
@@ -39,4 +39,8 @@ public interface RegionService {
      * @param id the id of the entity.
      */
     void delete(HashMap<String, Object> map);
+
+    void insert(HashMap<String, Object> map);
+
+    void update(HashMap<String, Object> map);
 }

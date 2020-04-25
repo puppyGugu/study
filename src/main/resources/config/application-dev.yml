@@ -39,7 +39,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mariadb://localhost:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mariadb://127.0.0.1:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
     username: jhtest
     password: 12345678
     hikari:
@@ -63,10 +63,10 @@ spring:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: smtp.gmail.com
+    port: 465
+    username: flapper.work
+    password: nqN-R3P-4tF-fe5
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

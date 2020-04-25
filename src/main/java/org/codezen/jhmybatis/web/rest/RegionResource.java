@@ -15,6 +15,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * REST controller for managing {@link org.codezen.jhmybatis.domain.Region}.
@@ -44,15 +45,17 @@ public class RegionResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/regions")
-    public ResponseEntity<Region> createRegion(@RequestBody Region region) throws URISyntaxException {
-        log.debug("REST request to save Region : {}", region);
-        if (region.getId() != null) {
+    public ResponseEntity<?> createRegion(@RequestBody HashMap<String, Object> map) throws URISyntaxException {
+        log.debug("REST request to save Region : {}", map);
+        //if (region.getId() != null) {
+        if (map.get("id") != null) {
             throw new BadRequestAlertException("A new region cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        Region result = regionService.save(region);
-        return ResponseEntity.created(new URI("/api/regions/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
-            .body(result);
+        regionService.insert(map);
+
+        return ResponseEntity.created(new URI("/api/regions/" + map.get("id").toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, map.get("id").toString()))
+            .body(map);
     }
 
     /**
@@ -65,15 +68,15 @@ public class RegionResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/regions")
-    public ResponseEntity<Region> updateRegion(@RequestBody Region region) throws URISyntaxException {
-        log.debug("REST request to update Region : {}", region);
-        if (region.getId() == null) {
+    public ResponseEntity<?> updateRegion(@RequestBody HashMap<String, Object> map) throws URISyntaxException {
+        log.debug("REST request to update Region : {}", map);
+        if (map.get("id") == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        Region result = regionService.save(region);
+        regionService.update(map);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, region.getId().toString()))
-            .body(result);
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, map.get("id").toString()))
+            .body(null);
     }
 
     /**
@@ -83,7 +86,7 @@ public class RegionResource {
      */
     @GetMapping("/regions")
     public List<HashMap<String, Object>> getAllRegions() {
-        log.debug("REST request to get all Regions 111111111111111111111111111");
+        log.debug("REST request to get all Regions");
         List<HashMap<String, Object>> regions = regionService.findAll();
         return regions;
     }
@@ -117,4 +120,5 @@ public class RegionResource {
         regionService.delete(map);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.codezen.jhmybatis.service.mybatis.RegionService" >
+
+    <sql id="Base_Column_List" >
+        id, region_name as regionName
+    </sql>
+
+    <select id="findAll" parameterType="HashMap" resultType="Map" >
+        SELECT
+        <include refid="Base_Column_List" />
+	    FROM region
+    </select>
+
+    <select id="findOne" parameterType="HashMap" resultType="HashMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+	    FROM region
+	    WHERE id = #{id}
+    </select>
+
+    <delete id="delete" parameterType="HashMap" >
+        delete from region
+        where id = #{id}
+    </delete>
+
+	<insert id="insert" parameterType="HashMap" >
+		INSERT INTO region
+		(
+            region_name
+		)
+		VALUES
+		(
+			#{regionName}
+		)
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+	</insert>
+
+    <update id="update" parameterType="HashMap">
+        UPDATE region SET
+            region_name = #{regionName} 
+        WHERE id = #{id}
+    </update>
+
+</mapper>

@@ -1,5 +1,6 @@
 package org.codezen.jhmybatis.web.rest;
 
+import org.codezen.jhmybatis.config.CamelListMap;
 import org.codezen.jhmybatis.domain.Region;
 import org.codezen.jhmybatis.service.mybatis.RegionService;
 import org.codezen.jhmybatis.web.rest.errors.BadRequestAlertException;
@@ -85,9 +86,9 @@ public class RegionResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of regions in body.
      */
     @GetMapping("/regions")
-    public List<HashMap<String, Object>> getAllRegions() {
+    public List<CamelListMap<String, Object>> getAllRegions() {
         log.debug("REST request to get all Regions");
-        List<HashMap<String, Object>> regions = regionService.findAll();
+        List<CamelListMap<String, Object>> regions = regionService.findAll();
         return regions;
     }
 

@@ -1,5 +1,6 @@
 package org.codezen.jhmybatis.service.mybatis;
 
+import org.codezen.jhmybatis.config.CamelListMap;
 import org.codezen.jhmybatis.domain.Region;
 
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public interface RegionService {
      *
      * @return the list of entities.
      */
-    List<HashMap<String, Object>> findAll();
+    List<CamelListMap<String, Object>> findAll();
 
     /**
      * Get the "id" region.

@@ -3,10 +3,10 @@
 <mapper namespace="org.codezen.jhmybatis.service.mybatis.RegionService" >
 
     <sql id="Base_Column_List" >
-        id, region_name as regionName
+        id, region_name
     </sql>
-
-    <select id="findAll" parameterType="HashMap" resultType="Map" >
+ 
+    <select id="findAll" parameterType="HashMap" resultType="org.codezen.jhmybatis.config.CamelListMap" >
         SELECT
         <include refid="Base_Column_List" />
 	    FROM region

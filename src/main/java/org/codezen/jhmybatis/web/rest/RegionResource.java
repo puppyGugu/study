@@ -1,23 +1,27 @@
 package org.codezen.jhmybatis.web.rest;
 
-import org.codezen.jhmybatis.config.CamelListMap;
-import org.codezen.jhmybatis.domain.Region;
-import org.codezen.jhmybatis.service.mybatis.RegionService;
-import org.codezen.jhmybatis.web.rest.errors.BadRequestAlertException;
-
-import io.github.jhipster.web.util.HeaderUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import org.codezen.jhmybatis.service.mybatis.CMap;
+import org.codezen.jhmybatis.service.mybatis.RegionService;
+import org.codezen.jhmybatis.web.rest.errors.BadRequestAlertException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.github.jhipster.web.util.HeaderUtil;
 /**
  * REST controller for managing {@link org.codezen.jhmybatis.domain.Region}.
  */
@@ -86,9 +90,9 @@ public class RegionResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of regions in body.
      */
     @GetMapping("/regions")
-    public List<CamelListMap<String, Object>> getAllRegions() {
+    public List<CMap<String, Object>> getAllRegions() {
         log.debug("REST request to get all Regions");
-        List<CamelListMap<String, Object>> regions = regionService.findAll();
+        List<CMap<String, Object>> regions = regionService.findAll();
         return regions;
     }
 
@@ -99,11 +103,11 @@ public class RegionResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the region, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/regions/{id}")
-    public HashMap<String, Object> getRegion(@PathVariable Long id) {
+    public CMap<String, Object> getRegion(@PathVariable Long id) {
         log.debug("REST request to get Region : {}", id);
         HashMap<String, Object> map = new HashMap<>();
         map.put("id",  id+"");
-        HashMap<String, Object> region = regionService.findOne(map);
+        CMap<String, Object> region = regionService.findOne(map);
         return region;
     }
 

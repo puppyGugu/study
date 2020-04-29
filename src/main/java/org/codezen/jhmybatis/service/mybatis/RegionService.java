@@ -1,8 +1,5 @@
 package org.codezen.jhmybatis.service.mybatis;
 
-import org.codezen.jhmybatis.config.CamelListMap;
-import org.codezen.jhmybatis.domain.Region;
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,7 +21,7 @@ public interface RegionService {
      *
      * @return the list of entities.
      */
-    List<CamelListMap<String, Object>> findAll();
+    List<CMap<String, Object>> findAll();
 
     /**
      * Get the "id" region.
@@ -32,7 +29,7 @@ public interface RegionService {
      * @param id the id of the entity.
      * @return the entity.
      */
-    HashMap<String, Object> findOne(HashMap<String, Object> map);
+    CMap<String, Object> findOne(HashMap<String, Object> map);
 
     /**
      * Delete the "id" region.

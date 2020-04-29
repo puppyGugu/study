@@ -16,6 +16,11 @@ And when I use Mybatis, I used HashMap instead using VO(Value Object), so there 
 
 # 만든 이유
 한국 IT개발자들이 많이 쓰는 SQL 방식의 Mybatis 를 적용한 것
+전자정부에서 쓰이는 
+Controller > Service > ServiceImpl > Mapper(Java) > Mapper(XML) -> Database 
+방식을
+Controller > Service > Mapper(XML) -> Database 
+으로 수정함
 
 # jar 생성
 `./mvnw -Pprod clean verify -Dmaven.test.skip=true`

@@ -120,7 +120,7 @@ server:
     session:
       cookie:
         http-only: true
-  context-path: /jhipster
+    context-path: /jhmybatis
 # Properties to be exposed on the /info management endpoint
 info:
   # Comma separated list of profiles that will trigger the ribbon to show

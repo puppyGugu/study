@@ -5,14 +5,14 @@
     <sql id="Base_Column_List" >
         id, region_name
     </sql>
- 
-    <select id="findAll" parameterType="HashMap" resultType="org.codezen.jhmybatis.config.CamelListMap" >
+
+    <select id="findAll" parameterType="HashMap" resultType="CMap" >
         SELECT
         <include refid="Base_Column_List" />
 	    FROM region
     </select>
 
-    <select id="findOne" parameterType="HashMap" resultType="HashMap" >
+    <select id="findOne" parameterType="HashMap" resultType="CMap" >
         SELECT
         <include refid="Base_Column_List" />
 	    FROM region
@@ -40,7 +40,7 @@
 
     <update id="update" parameterType="HashMap">
         UPDATE region SET
-            region_name = #{regionName} 
+            region_name = #{regionName}
         WHERE id = #{id}
     </update>
 

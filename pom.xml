@@ -189,6 +189,11 @@
             <artifactId>logstash-logback-encoder</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.bgee.log4jdbc-log4j2</groupId>
+            <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+            <version>1.16</version>
+        </dependency>
+        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
         </dependency>
@@ -309,7 +314,7 @@
             <artifactId>metrics-core</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
-    
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
@@ -825,7 +830,7 @@
                         -->
                         <embeddedLaunchScriptProperties>
                             <mode>service</mode>
-                        </embeddedLaunchScriptProperties>                        
+                        </embeddedLaunchScriptProperties>
                     </configuration>
 
                 </plugin>

@@ -17,6 +17,7 @@ logging:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
     org.codezen.jhmybatis: DEBUG
+    com.zaxxer.hikari.HikariDataSource: DEBUG
 
 spring:
   profiles:
@@ -36,7 +37,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mariadb://127.0.0.1:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
     username: jhmybatis
     password: 12345678
     hikari:
@@ -48,13 +50,15 @@ spring:
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
   jpa:
-    show-sql: true
+    show-sql: false
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.connection.provider_disables_autocommit: true
       hibernate.cache.use_second_level_cache: false
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
+      hibernate.format_sql: true
+
   liquibase:
     enabled: false
     # Remove 'faker' if you do not want the sample data to be loaded automatically

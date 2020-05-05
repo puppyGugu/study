@@ -3,9 +3,10 @@
 git clone https://flapper@git.boaflower.com/flapper/jhmybatis
 cd jhmybatis
 code . (윈도우는 탐색기 해당폴더에서 VSCode 실행)
-./mvnw (윈도우는 mvnw.cmd)
+$./mvnw (윈도우는 mvnw.cmd)
+$npm start
+http://localhost:9000/jhmybatis 으로 확인
 ```
-localhost:8080/jhmybatis 에서 확인
 [VSCode 환경설정](https://www.jhipster.tech/configuring-ide-visual-studio-code/)
 [각 IDE별 환경설정](https://www.jhipster.tech/configuring-ide/)
 spring-boot-devtools 를 통한 Hot Restart 가 중요함

@@ -7,6 +7,7 @@ code . (윈도우는 탐색기 해당폴더에서 VSCode 실행)
 ```
 localhost:8080/jhmybatis 에서 확인
 [VSCode 환경설정](https://www.jhipster.tech/configuring-ide-visual-studio-code/)
+[각 IDE별 환경설정](https://www.jhipster.tech/configuring-ide/)
 
 
 # jhmybatis

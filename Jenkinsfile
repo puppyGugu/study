@@ -23,7 +23,7 @@ node {
     }
 
     stage('packaging') {
-        sh "./mvnw -ntp verify -Pprod -DskipTests"
+        sh "./mvnw -ntp verify -Pprod -DskipTests -Dcheckstyle.skip"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 }

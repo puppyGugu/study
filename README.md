@@ -29,3 +29,6 @@ Controller > Service > Mapper(XML) -> Database
 
 # jar 생성
 `./mvnw -Pprod clean verify -Dmaven.test.skip=true`
+
+# Jenkins
+http://git.boaflower.com:18080/

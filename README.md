@@ -29,6 +29,7 @@ Controller > Service > Mapper(XML) -> Database
 
 # jar 생성
 `./mvnw -Pprod clean verify -Dmaven.test.skip=true`
+> Mybatis 로 바꾸면서 test 통과 못하는 부분 있음
 
 # Prod 에서 실행
 `java -jar jhmybatis-1.jar --spring.profiles.active=prod`

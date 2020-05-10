@@ -30,5 +30,9 @@ Controller > Service > Mapper(XML) -> Database
 # jar 생성
 `./mvnw -Pprod clean verify -Dmaven.test.skip=true`
 
+# Prod 에서 실행
+`java -jar jhmybatis-1.jar --spring.profiles.active=prod`
+> 메뉴얼대로라면 profile 지정안해도 Prod 로 되어야하지만 잘 안된다
+
 # Jenkins
 http://git.boaflower.com:18080/

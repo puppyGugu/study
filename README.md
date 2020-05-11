@@ -39,3 +39,6 @@ Controller > Service > Mapper(XML) -> Database
 # Jenkins
 
 http://git.boaflower.com:18080/
+
+# Kibana
+http://jhipster.boaflower.com:5601/

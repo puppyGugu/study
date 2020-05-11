@@ -32,7 +32,8 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mariadb://git.boaflower.com:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://git.boaflower.com:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
     username: jhmybatis
     password: 12345678
     hikari:

@@ -28,7 +28,7 @@ Controller > Service > Mapper(XML) -> Database
 으로 수정함
 
 # jar 생성
-`./mvnw -Pprod clean verify -Dmaven.test.skip=true`
+`./mvnw -Pprod clean verify -Dmaven.test.skip=true -Dcheckstyle.skip`
 > Mybatis 로 바꾸면서 test 통과 못하는 부분 있음
 
 # Prod 에서 실행

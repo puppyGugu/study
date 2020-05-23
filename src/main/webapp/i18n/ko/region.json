@@ -2,21 +2,24 @@
   "jhMybatisApp": {
     "region": {
       "home": {
-        "title": "Regions",
-        "createLabel": "Create a new Region",
-        "createOrEditLabel": "Create or edit a Region",
-        "notFound": "No Regions found"
+        "title": "지역",
+        "createLabel": "새로운 지역 생성",
+        "createOrEditLabel": "지역 생성 또는 수정",
+        "notFound": "지역을 찾을 수 없습니다."
       },
-      "created": "A new Region is created with identifier {{ param }}",
-      "updated": "A Region is updated with identifier {{ param }}",
-      "deleted": "A Region is deleted with identifier {{ param }}",
+      "created": "{{ param }} 지역이 생성되었습니다.",
+      "updated": "{{ param }} 지역이 수정되었습니다.",
+      "deleted": "{{ param }} 지역이 삭제되었습니다.",
       "delete": {
-        "question": "Are you sure you want to delete Region {{ id }}?"
+        "question": "{{ id }} 지역을 삭제하시겠습니까??"
       },
       "detail": {
-        "title": "Region"
+        "title": "지역"
       },
-      "regionName": "지역명"
+      "regionName": "지역명",
+      "error": {
+        "fail": "<strong>수정 실패</string> 국가에 해당지역이 이미 존재할 때는 수정할 수 없습니다."
+      }
     }
   }
 }

@@ -19,6 +19,12 @@
 	    WHERE id = #{id}
     </select>
 
+    <select id="ifExists" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM country
+        WHERE region_id = #{id}
+    </select>
+
     <delete id="delete" parameterType="HashMap" >
         delete from region
         where id = #{id}

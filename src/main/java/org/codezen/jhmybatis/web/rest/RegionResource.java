@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,7 +47,7 @@ public class RegionResource {
     /**
      * {@code POST  /regions} : Create a new region.
      *
-     * @param region the region to create.
+     * @param map the region to create.
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new region, or with status {@code 400 (Bad Request)} if the region has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
@@ -66,19 +68,32 @@ public class RegionResource {
     /**
      * {@code PUT  /regions} : Updates an existing region.
      *
-     * @param region the region to update.
+     * @param map the region to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated region,
      * or with status {@code 400 (Bad Request)} if the region is not valid,
      * or with status {@code 500 (Internal Server Error)} if the region couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/regions")
+    @Transactional
     public ResponseEntity<?> updateRegion(@RequestBody HashMap<String, Object> map) throws URISyntaxException {
         log.debug("REST request to update Region : {}", map);
         if (map.get("id") == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
         regionService.update(map);
+
+        // 해당 region 의 country 가 있는지 확인
+        int cnt = regionService.ifExists(map);
+
+        if (cnt > 0) {
+            log.debug("Country exists in the Region");
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+
+            // TODO
+            // Need client work
+        }
+
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, map.get("id").toString()))
             .body(null);
@@ -103,11 +118,11 @@ public class RegionResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the region, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/regions/{id}")
-    public CMap<String, Object> getRegion(@PathVariable Long id) {
+    public HashMap<String, Object> getRegion(@PathVariable Long id) {
         log.debug("REST request to get Region : {}", id);
         HashMap<String, Object> map = new HashMap<>();
         map.put("id",  id+"");
-        CMap<String, Object> region = regionService.findOne(map);
+        HashMap<String, Object> region = regionService.findOne(map);
         return region;
     }
 

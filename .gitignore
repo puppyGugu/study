@@ -148,3 +148,5 @@ Desktop.ini
 
 .DS_Store
 package-lock.json
+makejar.sh
+startup.sh

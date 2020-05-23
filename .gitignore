@@ -148,3 +148,7 @@ Desktop.ini
 
 .DS_Store
 package-lock.json
+src/main/resources/idea.gdsl
+logs
+makejar.sh
+startup.sh

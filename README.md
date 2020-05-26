@@ -53,7 +53,7 @@ http://jhipster.boaflower.com:5601/
 # Environment Setting
 
 ```
-git clone https://flapper@git.boaflower.com/flapper/jhmybatis
+git clone https://git.boaflower.com/flapper/jhmybatis
 cd jhmybatis
 code . (in Windows Explorer 'execute with VScode' on context menu)
 $./mvnw (in Windows mvnw.cmd on Command Prompt)

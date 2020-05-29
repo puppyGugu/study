@@ -38,9 +38,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/jhmybatis?useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: jhmybatis
-    password: 12345678
+    url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/db_test?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: user_test
+    password: pass_test
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -60,9 +60,9 @@ spring:
       hibernate.format_sql: true
 
   liquibase:
-    enabled: false
+    enabled: true
     # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev
+    contexts: dev, faker
   mail:
     host: smtp.gmail.com
     port: 587

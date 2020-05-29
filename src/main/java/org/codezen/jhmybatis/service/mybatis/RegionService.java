@@ -35,4 +35,6 @@ public interface RegionService {
 
     int ifExists(HashMap<String,Object> map);
 
+	void save(HashMap<String, Object> map);
+
 }
